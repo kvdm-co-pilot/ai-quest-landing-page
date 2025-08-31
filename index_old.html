@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Stack Web Developer Career Accelerator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #1A1A1A;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      background: #6c2bd9;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 10%;
+      background: linear-gradient(to right, #f7c86a, #f7b24a);
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .price del {
+      color: gray;
+      margin-left: 0.5rem;
+    }
+
+    .hero img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    /* Learn Section */
+    .learn {
+      padding: 2rem 10%;
+    }
+
+    .learn h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .card {
+      flex: 1;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* New Section */
+    .career {
+      background: #121212;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 10%;
+    }
+
+    .career-content {
+      max-width: 50%;
+    }
+
+    .career-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .career-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+
+    .career-price {
+      margin: 1.5rem 0;
+      font-size: 1.3rem;
+    }
+
+    .career-price del {
+      color: gray;
+      margin-left: 0.5rem;
+    }
+
+    .career-box {
+      background: white;
+      color: #1A1A1A;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      min-width: 250px;
+    }
+
+    .career-box h3 {
+      margin-bottom: 1rem;
+    }
+
+    .career-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .career-box ul li {
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Udemy</div>
+    <nav>
+      <a href="#">Plans & Pricing</a>
+      <a href="#">Udemy Business</a>
+      <a href="#">Teach on Udemy</a>
+      <a href="#">Log in</a>
+      <a href="#" class="btn">Sign up</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Full Stack Web Developer Career Accelerator</h1>
+      <p>Your career in full stack web development starts here. Fast-track learning and interview prep. Grow skills at your own pace. Expand your earnings potential.</p>
+      <div class="stats">
+        <div>⭐ 4.7 rating</div>
+        <div>126 exercises</div>
+        <div>87.8 hours</div>
+      </div>
+      <div class="price">
+        <a class="btn" href="#">Get started</a> 
+        R779.97 <del>R3,399.97</del>
+      </div>
+      <p>👥 1.5M learners already enrolled</p>
+    </div>
+    <img src="https://via.placeholder.com/300x300.png?text=Instructor+Image" alt="Instructor">
+  </section>
+
+  <section class="learn">
+    <h2>What you'll learn</h2>
+    <div class="cards">
+      <div class="card">JavaScript, React, & Node.js</div>
+      <div class="card">JavaScript Interviews</div>
+      <div class="card">Data Structures & Algorithms</div>
+    </div>
+  </section>
+
+  <!-- New Career Section -->
+  <section class="career">
+    <div class="career-content">
+      <h2>Break into a full stack web development career.</h2>
+      <p>Get the skills, structure, and hands-on experience to launch your career.</p>
+      <div class="career-price">
+        <a class="btn" href="#">Get started</a>
+        R779.97 <del>R3,399.97</del>
+      </div>
+      <p>30-Day Money-Back Guarantee</p>
+    </div>
+    <div class="career-box">
+      <h3>What's included</h3>
+      <ul>
+        <li>🏆 3 top-rated courses</li>
+        <li>⭐ 4.7 average course rating</li>
+        <li>💻 126 hands-on practice exercises</li>
+        <li>🎥 87.8 hours of on-demand content</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
