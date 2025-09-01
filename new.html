@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Full Stack Web Development</title>
+<style>
+  :root{
+    --bg:#f7f7fb;
+    --dark:#14141b;
+    --card:#ffffff;
+    --ink:#0f1b40;
+    --muted:#5c6a86;
+    --brand:#5b61ff;
+    --accent:#7ee084;
+    --warning:#ffb020;
+    --border:#e6e8ef;
+    --chip:#eef2ff;
+    --purple:#6d28d9;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans";
+    color:var(--ink);
+    background:var(--bg);
+  }
+  .wrap{max-width:1100px;margin:32px auto;padding:12px}
+
+  /* ---------------------------
+     TOP SECTION (Learn skills)
+  ----------------------------- */
+  .skills{
+    text-align:center;margin-bottom:40px;
+  }
+  .skills h2{
+    font-size:28px;margin-bottom:22px;
+    color:#1c1c24
+  }
+  .pillbox{
+    display:flex;justify-content:center;flex-wrap:wrap;gap:18px
+  }
+  .pill{
+    display:flex;flex-direction:column;align-items:center;
+    background:#fff;border:1px solid var(--border);
+    border-radius:14px;padding:14px 20px;min-width:150px;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+  }
+  .pill-icon{
+    background:#f2e9fc;color:var(--purple);
+    font-weight:700;font-size:18px;
+    padding:8px;border-radius:10px;margin-bottom:8px
+  }
+  .pill strong{font-size:15px}
+  .pill span{font-size:13px;color:var(--muted)}
+
+  /* ---------------------------
+     HERO DARK SECTION
+  ----------------------------- */
+  .hero{
+    background:var(--dark);color:#fff;padding:60px 20px
+  }
+  .hero-inner{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:2fr 1fr;gap:40px;
+  }
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr}
+  }
+  .hero h1{font-size:32px;margin:0 0 16px;font-weight:800}
+  .hero p{margin:0 0 24px;color:#e2e2e7}
+  .hero .btn{
+    background:var(--purple);color:#fff;
+    border:none;padding:14px 24px;font-weight:700;
+    border-radius:8px;font-size:16px;cursor:pointer
+  }
+  .hero .price{margin-top:18px;font-size:20px;font-weight:800}
+  .hero .price s{margin-left:12px;color:#aaa;font-weight:500}
+
+  .whats{
+    background:#fff;color:var(--ink);padding:24px;
+    border-radius:18px;align-self:start
+  }
+  .whats h3{margin:0 0 18px;font-size:18px}
+  .whats ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .whats li{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
+  .whats li strong{color:var(--ink)}
+
+  /* ---------------------------
+     COURSE CARD & ACCORDION
+  ----------------------------- */
+  .shell{
+    display:grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap:24px;
+  }
+  @media (max-width: 900px){
+    .shell{grid-template-columns:1fr}
+  }
+
+  /* Left column: course card */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px;
+    box-shadow: 0 6px 20px rgba(15,27,64,.06);
+  }
+  .eyebrow{color:var(--muted);font-weight:600;margin-bottom:6px}
+  .title{font-size:28px;letter-spacing:.2px;margin:0 0 14px}
+  .thumb{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid var(--border);
+  }
+  .thumb img{display:block;width:100%;height:auto}
+  .badge{
+    position:absolute;left:12px;top:12px;
+    background:var(--warning);
+    color:#0b0b0b;
+    font-weight:700;
+    padding:6px 10px;
+    border-radius:9px;
+    font-size:13px;
+    box-shadow:0 2px 10px rgba(0,0,0,.12);
+  }
+  .course-h{font-size:18px;margin:14px 0 6px}
+  .course-sub{color:var(--muted);margin:0 0 12px}
+  .byline{color:var(--muted);font-size:14px;margin-bottom:12px}
+
+  .meta{
+    display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--chip);
+    border:1px solid var(--border);
+    color:var(--ink);
+    padding:6px 10px;border-radius:999px;
+    font-size:13px;
+  }
+  .price{
+    display:flex;align-items:center;gap:10px;
+    font-size:20px;font-weight:800;margin-top:6px
+  }
+  .price s{color:var(--muted);font-weight:500}
+  .star{font-size:15px}
+
+  /* Right column: accordion */
+  .panel{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:0;
+    overflow:hidden;
+    box-shadow: 0 6px 20px rgba(15,27,64,.06);
+  }
+  .panel-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 18px 6px 18px;border-bottom:1px solid var(--border);
+  }
+  .panel-head h3{margin:0;font-size:18px}
+  .panel-actions{display:flex;gap:10px}
+  .btn{
+    appearance:none;border:1px solid var(--border);background:#fff;color:var(--ink);
+    padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer
+  }
+  .btn:hover{border-color:#cfd4e4}
+
+  .acc{
+    border-bottom:1px solid var(--border)
+  }
+  .acc:last-child{border-bottom:0}
+  .acc summary{
+    list-style:none;cursor:pointer;
+    padding:18px;
+    display:flex;align-items:center;gap:14px;
+    font-weight:750
+  }
+  .acc summary::-webkit-details-marker{display:none}
+  .num{
+    width:40px;height:40px;display:grid;place-items:center;
+    background:#eef6ff;border:1px solid #d9e7ff;color:#1b4cff;
+    border-radius:10px;font-weight:800
+  }
+  .chev{margin-left:auto;transition:transform .2s ease}
+  details[open] .chev{transform:rotate(180deg)}
+  .acc .content{
+    padding:0 18px 18px 72px;color:var(--muted)
+  }
+  .tick{font-weight:700;margin-right:8px}
+  .list{margin:8px 0 0 0;padding:0 0 0 18px}
+</style>
+</head>
+<body>
+
+  <!-- TOP SECTION -->
+  <section class="skills">
+    <h2>Learn the skills that matter most</h2>
+    <div class="pillbox">
+      <div class="pill"><div class="pill-icon">&lt;/&gt;</div><strong>Web Development</strong><span>14M learners</span></div>
+      <div class="pill"><div class="pill-icon">&lt;/&gt;</div><strong>JavaScript</strong><span>18M learners</span></div>
+      <div class="pill"><div class="pill-icon">&lt;/&gt;</div><strong>HTML</strong><span>12M learners</span></div>
+      <div class="pill"><div class="pill-icon">&lt;/&gt;</div><strong>CSS</strong><span>9.9M learners</span></div>
+      <div class="pill"><div class="pill-icon">&lt;/&gt;</div><strong>Node.Js</strong><span>3.4M learners</span></div>
+    </div>
+  </section>
+
+  <!-- HERO DARK SECTION -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Break into a full stack web development career.</h1>
+        <p>Get the skills, structure, and hands-on experience to launch your career.</p>
+        <button class="btn">Get started</button>
+        <div class="price">R779.97 <s>R3,399.97</s></div>
+        <p style="font-size:13px;margin-top:8px">30-Day Money-Back Guarantee</p>
+      </div>
+      <div class="whats">
+        <h3>What's included</h3>
+        <ul>
+          <li>🏆 <strong>3</strong> top-rated courses</li>
+          <li>⭐ <strong>4.7</strong> average course rating</li>
+          <li>&lt;/&gt; <strong>126</strong> hands-on practice exercises</li>
+          <li>💻 <strong>87.8</strong> hours of on-demand content</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEN paste the course card/accordion HTML here -->
+  <div class="wrap">
+    <div class="shell">
+      <!-- LEFT: Course Card -->
+      <article class="card">
+        <div class="eyebrow">Course 1</div>
+        <h1 class="title">JavaScript, React, &amp; Node.js</h1>
+
+        <figure class="thumb">
+          <!-- Replace with your own image URL -->
+          <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Course cover for The Complete Full-Stack Web Development Bootcamp" />
+          <figcaption class="badge">Bestseller</figcaption>
+        </figure>
+
+        <h2 class="course-h">The Complete Full-Stack Web Development Bootcamp</h2>
+        <p class="course-sub">Become a Full-Stack Web Developer with just ONE course. HTML, CSS, JavaScript, Node, React,…</p>
+        <p class="byline">Dr. Angela Yu, Developer and Lead Instructor</p>
+
+        <div class="meta">
+          <span class="chip"><span class="star">⭐</span> 4.7</span>
+          <span class="chip">450,778 ratings</span>
+          <span class="chip">61.5 total hours</span>
+          <span class="chip">374 lectures</span>
+          <span class="chip">All Levels</span>
+          <span class="chip">Updated 2/2025</span>
+        </div>
+
+        <div class="price">
+          <span>R309.99</span>
+          <s>R1,469.99</s>
+        </div>
+      </article>
+
+      <!-- RIGHT: Content Covered / Accordion -->
+      <section class="panel" aria-label="Content Covered">
+        <header class="panel-head">
+          <h3>Content Covered</h3>
+          <div class="panel-actions">
+            <button class="btn" id="expandAll" type="button">Expand all</button>
+          </div>
+        </header>
+
+        <details class="acc">
+          <summary><span class="num">01</span> Introduction to Web Development <span class="chev">▾</span></summary>
+          <div class="content">Overview of how the web works, essential tools, and developer workflow.</div>
+        </details>
+
+        <details class="acc">
+          <summary><span class="num">02</span> Frontend Development <span class="chev">▾</span></summary>
+          <div class="content">HTML, CSS, modern JavaScript, layouts, components, and responsive design.</div>
+        </details>
+
+        <details class="acc" open>
+          <summary><span class="num">03</span> Backend Development <span class="chev">▾</span></summary>
+          <div class="content">
+            <ul class="list">
+              <li><span class="tick">✓</span>Develop server-side applications using Node.js, Express.js, and EJS.</li>
+              <li><span class="tick">✓</span>Understand REST, APIs, and database handling with SQL.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary><span class="num">04</span> Git, GitHub, and Version Control <span class="chev">▾</span></summary>
+          <div class="content">Commit history, branching, pull requests, and team workflows.</div>
+        </details>
+
+        <details class="acc">
+          <summary><span class="num">05</span> Authentication and Security <span class="chev">▾</span></summary>
+          <div class="content">Sessions, tokens, hashing, and common security best practices.</div>
+        </details>
+
+        <details class="acc">
+          <summary><span class="num">06</span> Building Applications using React.js <span class="chev">▾</span></summary>
+          <div class="content">Components, hooks, state management, routing, and deployment.</div>
+        </details>
+
+        <details class="acc">
+          <summary><span class="num">07</span> Web3 Decentralised App Development and Deployment <span class="chev">▾</span></summary>
+          <div class="content">Intro to smart contracts, wallets, and deploying dApps.</div>
+        </details>
+      </section>
+    </div>
+  </div>
+
+<script>
+  // Expand/Collapse all functionality
+  const expandBtn = document.getElementById('expandAll');
+  const groups = Array.from(document.querySelectorAll('.acc'));
+
+  function setAll(open) {
+    groups.forEach(d => d.open = open);
+    expandBtn.textContent = open ? 'Collapse all' : 'Expand all';
+  }
+  expandBtn.addEventListener('click', () => {
+    const anyClosed = groups.some(d => !d.open);
+    setAll(anyClosed);
+  });
+</script>
+
+</body>
+</html>
