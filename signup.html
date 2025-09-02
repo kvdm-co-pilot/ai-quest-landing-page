@@ -2,42 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Quest — Sign Up</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Your Slot - AI Quest</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f7f8fb;
+      color: #1c1c24;
+      line-height: 1.6;
+    }
+
+    .booking-form {
+      background: #fff;
+      color: #000;
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      font-family: Arial, sans-serif;
+    }
+
+    .booking-form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .booking-form p {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      color: #333;
+    }
+
+    .booking-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+
+    .booking-form input,
+    .booking-form select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus {
+      border-color: #16161d;
+      outline: none;
+    }
+
+    .booking-form button {
+      width: 100%;
+      padding: 0.9rem;
+      font-size: 1rem;
+      background: #16161d;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .booking-form button:hover {
+      background: #333;
+    }
+
+    .booking-form button:active {
+      background: #000;
+    }
+
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .success-screen.show {
+      display: block;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 1rem;
+    }
+
+    .success-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #16161d;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-message {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .back-button {
+      padding: 0.8rem 1.5rem;
+      background: #f8f9fa;
+      color: #16161d;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      background: #e9ecef;
+    }
+
+    .booking-form .note {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">AI Quest</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="curriculum.html">Curriculum</a>
-      <a href="signup.html" class="btn">Sign Up</a>
-    </nav>
-  </header>
+  <section class="booking-form">
+    <div id="bookingForm">
+      <h2>Book Your Slot</h2>
+      <p>Please fill in your details to reserve a spot for AI Quest.</p>
+      
+      <form id="slotForm">
+        <label>Parent Name</label>
+        <input type="text" name="parent_name" required>
+        
+        <label>Student Name</label>
+        <input type="text" name="student_name" required>
+        
+        <label>Contact Number</label>
+        <input type="tel" name="contact_number" required>
+        
+        <label>Email</label>
+        <input type="email" name="email" required>
+        
+        <label>Choose a Time Slot</label>
+        <select name="time_slot" required>
+          <option value="">Select a slot...</option>
+          <option>Tuesday 17:30 – 18:30</option>
+          <option>Tuesday 18:30 – 19:30 (LIMITED)</option>
+          <option>Thursday 17:30 – 18:30</option>
+          <option>Thursday 18:30 – 19:30 (LIMITED)</option>
+          <option>Saturday 10:00 – 11:00</option>
+        </select>
+        
+        <button type="submit">Book Now</button>
+      </form>
+      
+      <p class="note">We'll confirm your booking by email.</p>
+    </div>
 
-  <section class="hero small">
-    <h1>Sign Up</h1>
-    <p>Secure your spot today and start your AI Quest journey.</p>
-  </section>
-
-  <section class="pricing">
-    <div class="price-card">
-      <h2>Full 12-Week Program</h2>
-      <p class="price">R779.97 <del>R3,399.97</del></p>
-      <ul>
-        <li>12 weeks of structured content</li>
-        <li>AI + human collaboration activities</li>
-        <li>Projects across study, creativity, and coding</li>
-        <li>Parent dashboard & progress updates</li>
-        <li>30-Day Money-Back Guarantee</li>
-      </ul>
-      <a href="#" class="btn">Get Started Now</a>
+    <div id="successScreen" class="success-screen">
+      <div class="success-icon">✅</div>
+      <div class="success-title">Booking Confirmed!</div>
+      <div class="success-message">
+        Thank you! We've received your booking request and will confirm via email shortly.
+      </div>
+      <a href="index.html" class="back-button">Back to Home</a>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 AI Quest. All rights reserved.</p>
-  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("ydIe919bmjLebLW0k"); // from EmailJS dashboard
+    })();
+
+    document.getElementById("slotForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_imqqzwb", "template_yewx6na", this)
+        .then(() => {
+          // Show success screen instead of alert
+          document.getElementById("bookingForm").style.display = "none";
+          document.getElementById("successScreen").classList.add("show");
+        }, (error) => {
+          alert("❌ Failed to send booking. Please try again.");
+          console.error(error);
+        });
+    });
+  </script>
 </body>
 </html>
